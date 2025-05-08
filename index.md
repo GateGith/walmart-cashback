@@ -1,9 +1,7 @@
-# 🚀 Walmart 15% Cashback (Verified Today)  
+# Walmart 15% Cashback (Verified May 2025)
 
-![Proof](https://retailcashbackrewards.blogspot.com/your-image.jpg)  
+![Cashback Proof](https://retailcashbackrewards.blogspot.com/your-proof-image.jpg)
 
-✅ **Instant Approval** | ⏳ **24h Only**  
+➡️ [**Click to Claim**](https://retailcashbackrewards.blogspot.com?utm_source=github)
 
-[👉 **CLAIM NOW**](https://retailcashbackrewards.blogspot.com?utm_source=github)  
-
-*Updated: {{ site.time | date: "%Y-%m-%d" }}*  
+*Auto-updated daily*
