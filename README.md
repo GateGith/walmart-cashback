@@ -1,1 +1,1 @@
-# walmart-cashback-2025
+# walmart-cashback
