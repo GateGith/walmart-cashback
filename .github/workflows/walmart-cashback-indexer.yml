@@ -19,9 +19,9 @@ jobs:
         run: |
           gcloud auth activate-service-account --key-file=key.json
           DEALS=(
-            "https://yourusername.github.io/walmart-cashback/grocery"
-            "https://yourusername.github.io/walmart-cashback/electronics"
-            "https://yourusername.github.io/walmart-cashback/clothing"
+           "https://www.cpagrip.com/offer.php?id=1802469&tid=GROCERY"
+           "https://www.cpagrip.com/offer.php?id=2849301&tid=WPLUS"
+           "https://www.cpagrip.com/offer.php?id=3748592&tid=TOYS"
           )
           for URL in "${DEALS[@]}"; do
             echo "Indexing $URL"
