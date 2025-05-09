@@ -1,0 +1,35 @@
+name: 🛒 Walmart Cashback Indexer
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 4 * * *'  # Daily at 4AM EST
+
+jobs:
+  index-deals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔐 Load Google Key
+        env:
+          GOOGLE_KEY: ${{ secrets.WALMART_CASHBACK_KEY }}
+        run: |
+          echo "$GOOGLE_KEY" > key.json
+          echo "Using service account: $(jq -r '.client_email' key.json)"
+
+      - name: 🚀 Submit to Google
+        run: |
+          gcloud auth activate-service-account --key-file=key.json
+          DEALS=(
+            "https://yourusername.github.io/walmart-cashback/grocery"
+            "https://yourusername.github.io/walmart-cashback/electronics"
+            "https://yourusername.github.io/walmart-cashback/clothing"
+          )
+          for URL in "${DEALS[@]}"; do
+            echo "Indexing $URL"
+            curl -X POST "https://indexing.googleapis.com/v3/urlNotifications:publish" \
+              -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+              -d '{"url": "'"$URL"'", "type": "URL_UPDATED"}' || echo "Continuing..."
+            sleep 1
+          done
+
+      - name: 🧹 Cleanup
+        run: rm -f key.json
