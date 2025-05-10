@@ -20,6 +20,24 @@ css:
 - 🥛 Great Value Milk: **8% back**  
 - 🍞 Bread & Bakery: **10% cashback**  
 
-<div class="alert">
-⏰ Deal ends in <span id="countdown">23:59:59</span>  
+<div class="deal-countdown">
+⏰ Deal ends in <span id="countdown">23:59:59</span>
 </div>
+
+<script>
+function updateTimer() {
+  const now = new Date();
+  const end = new Date();
+  end.setHours(23,59,59); // Today at midnight
+  
+  const diff = end - now;
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+  
+  document.getElementById('countdown').textContent = 
+    `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+}
+setInterval(updateTimer, 1000);
+updateTimer();
+</script>
