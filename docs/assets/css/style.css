@@ -35,3 +35,19 @@ body {
   body { padding: 10px; }
   .btn { display: block; text-align: center; }
 }
+/* Countdown Timer Styles */
+.deal-countdown {
+  background: #fff8e1;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #ffc107;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+#countdown {
+  color: #d32f2f;
+  font-weight: bold;
+  font-size: 1.3em;
+}
