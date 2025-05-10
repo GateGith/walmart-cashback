@@ -1,6 +1,7 @@
 ---
 title: "Grocery Cashback Deals"
 layout: default
+- "/assets/css/style.css"
 ---
 # 🍎 Weekly Grocery Specials  
 **12% Cashback** • **Free Delivery** on $35+  
