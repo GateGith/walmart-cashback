@@ -1,21 +1,19 @@
 ---
 title: "Grocery Cashback Deals"
 layout: default
-css:
-- "/assets/css/style.css"
+css: "/assets/css/style.css"
 ---
-# 🍎 Weekly Grocery Specials  
-**12% Cashback** • **Free Delivery** on $35+  
-## 🎯 Today's Best Deals
 
-[🛒 CLAIM 12% CASHBACK](https://playabledownload.com/1802469){: .btn .btn-green }
+# 🛒 Weekly Grocery Specials  
+**12% Cashback** • **Free Delivery** on $35+  
+
+[🛒 CLAIM 12% CASHBACK](https://playabledownload.com/1802469){: .btn .btn-green }  
 
 <div class="alert">
 ⚠️ **HURRY!** Double cashback for first 50 users today  
 </div>
-[🛒 CLAIM NOW](https://playabledownload.com/1802469){: .btn .btn-green }  
 
-### Today's Hot Deals
+## Today's Hot Deals  
 - 🥑 Organic Avocados: **+5% bonus**  
 - 🥛 Great Value Milk: **8% back**  
 - 🍞 Bread & Bakery: **10% cashback**  
@@ -25,6 +23,7 @@ css:
 </div>
 
 <script>
+// Main Timer
 function updateTimer() {
   const now = new Date();
   const end = new Date();
@@ -35,18 +34,18 @@ function updateTimer() {
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((diff % (1000 * 60)) / 1000);
   
-  document.getElementById('countdown').textContent = 
+  document.getElementById("countdown").textContent = 
     `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
 }
 setInterval(updateTimer, 1000);
 updateTimer();
-  <script>
-// Flash red when under 1 hour
-const timer = document.getElementById('countdown');
+
+// Urgency Effects
+const timer = document.getElementById("countdown");
 setInterval(() => {
   const timeParts = timer.textContent.split(':');
   if (parseInt(timeParts[0]) < 1) {
-    timer.style.color = '#ff0000';
+    timer.style.color = "#ff0000";
     timer.style.animation = 'blink 1s infinite';
   }
 }, 1000);
@@ -55,4 +54,3 @@ setInterval(() => {
 <style>
 @keyframes blink { 50% { opacity: 0.5; } }
 </style>
-</script>
