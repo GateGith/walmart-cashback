@@ -1,6 +1,7 @@
 ---
 title: "Grocery Cashback Deals"
 layout: default
+css:
 - "/assets/css/style.css"
 ---
 # 🍎 Weekly Grocery Specials  
