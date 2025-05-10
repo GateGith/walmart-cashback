@@ -40,4 +40,19 @@ function updateTimer() {
 }
 setInterval(updateTimer, 1000);
 updateTimer();
+  <script>
+// Flash red when under 1 hour
+const timer = document.getElementById('countdown');
+setInterval(() => {
+  const timeParts = timer.textContent.split(':');
+  if (parseInt(timeParts[0]) < 1) {
+    timer.style.color = '#ff0000';
+    timer.style.animation = 'blink 1s infinite';
+  }
+}, 1000);
+</script>
+
+<style>
+@keyframes blink { 50% { opacity: 0.5; } }
+</style>
 </script>
