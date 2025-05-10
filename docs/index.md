@@ -1,6 +1,8 @@
 ---
 title: "Walmart Cashback Hub"
 layout: default
+CSS:
+- "/assets/css/style.css"
 ---
 # 🛍️ Welcome to Your Walmart Savings!
 **Exclusive member-only deals**  
