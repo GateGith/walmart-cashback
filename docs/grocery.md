@@ -24,28 +24,64 @@ css: "/assets/css/style.css"
 - 🍞 Bakery Items: **10% Cashback**  
 
 <script>
-// Fixed Countdown Timer
-document.addEventListener('DOMContentLoaded', function() {
-  function updateTimer() {
-    const now = new Date();
-    const end = new Date();
-    end.setHours(23, 59, 59); // Today at midnight
+// Triple-Protected Countdown Timer
+(function() {
+  // Fallback 1: Verify DOM ready
+  document.addEventListener('DOMContentLoaded', initTimer);
+  
+  // Fallback 2: Run even if DOMContentLoaded fails
+  setTimeout(initTimer, 500);
+  
+  function initTimer() {
+    const timerElement = document.getElementById('countdown');
+    if (!timerElement) return;
     
-    const diff = end - now;
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    let lastUpdate = 0;
     
-    document.getElementById("countdown").textContent = 
-      `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
-    
-    if(hours < 1) {
-      document.getElementById("countdown").style.color = "#e31837";
+    // Main update function
+    function updateTimer() {
+      const now = Date.now();
+      
+      // Fallback 3: Force refresh if stuck
+      if (now - lastUpdate > 2000) {
+        console.warn('Timer stuck - resetting');
+        location.reload();
+      }
+      lastUpdate = now;
+      
+      const end = new Date();
+      end.setHours(23, 59, 59, 999); // Today at midnight
+      
+      const diff = end - new Date();
+      if (diff <= 0) {
+        timerElement.textContent = "00:00:00";
+        timerElement.style.color = "#e31837";
+        return;
+      }
+      
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secs = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      timerElement.textContent = 
+        `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
+      
+      timerElement.style.color = hours < 1 ? "#e31837" : "";
     }
+    
+    // Double refresh mechanism
+    setInterval(updateTimer, 1000);
+    setTimeout(updateTimer, 50);
+    updateTimer();
+    
+    // Emergency fallback - reload page if timer stops
+    setInterval(() => {
+      if (Date.now() - lastUpdate > 3000) {
+        location.reload();
+      }
+    }, 3000);
   }
-  setInterval(updateTimer, 1000);
-  updateTimer();
-});
+})();
 </script>
 
 <style>
@@ -90,5 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
   border-left: 4px solid var(--walmart-yellow);
   margin: 15px 0;
   text-align: center;
+  font-weight: bold;
 }
 </style>
