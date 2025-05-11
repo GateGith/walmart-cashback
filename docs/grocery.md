@@ -54,3 +54,23 @@ setInterval(() => {
 <style>
 @keyframes blink { 50% { opacity: 0.5; } }
 </style>
+<div class="deal-countdown">
+⏳ <strong>Time left:</strong> <span id="countdown">24:00:00</span>
+</div>
+
+<script>
+function updateTimer() {
+  const now = new Date();
+  const end = new Date();
+  end.setDate(end.getDate() + 3); // 3 days from now
+  
+  const diff = end - now;
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const secs = Math.floor((diff % (1000 * 60)) / 1000);
+  
+  document.getElementById("countdown").textContent = 
+    `${hours}h ${mins}m ${secs}s`;
+}
+setInterval(updateTimer, 1000);
+</script>
