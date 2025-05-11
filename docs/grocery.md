@@ -1,5 +1,5 @@
 ---
-title: "Walmart Cashback Deals"
+title: "Walmart Grocery Cashback"
 layout: default
 css: "/assets/css/style.css"
 ---
@@ -36,7 +36,7 @@ function updateTimer() {
   const secs = Math.floor((diff % (1000 * 60)) / 1000);
   
   document.getElementById("countdown").textContent = 
-    `${hours}h ${mins}m ${secs}s`;
+    `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
   
   if(hours < 24) {
     document.getElementById("countdown").style.color = "#e31837";
