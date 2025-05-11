@@ -24,26 +24,28 @@ css: "/assets/css/style.css"
 - 🍞 Bakery Items: **10% Cashback**  
 
 <script>
-// Countdown Timer
-function updateTimer() {
-  const now = new Date();
-  const end = new Date();
-  end.setDate(end.getDate() + 3);
-  
-  const diff = end - now;
-  const hours = Math.floor(diff / (1000 * 60 * 60));
-  const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const secs = Math.floor((diff % (1000 * 60)) / 1000);
-  
-  document.getElementById("countdown").textContent = 
-    `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
-  
-  if(hours < 24) {
-    document.getElementById("countdown").style.color = "#e31837";
+// Fixed Countdown Timer
+document.addEventListener('DOMContentLoaded', function() {
+  function updateTimer() {
+    const now = new Date();
+    const end = new Date();
+    end.setHours(23, 59, 59); // Today at midnight
+    
+    const diff = end - now;
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    document.getElementById("countdown").textContent = 
+      `${hours.toString().padStart(2,'0')}:${minutes.toString().padStart(2,'0')}:${seconds.toString().padStart(2,'0')}`;
+    
+    if(hours < 1) {
+      document.getElementById("countdown").style.color = "#e31837";
+    }
   }
-}
-setInterval(updateTimer, 1000);
-updateTimer();
+  setInterval(updateTimer, 1000);
+  updateTimer();
+});
 </script>
 
 <style>
