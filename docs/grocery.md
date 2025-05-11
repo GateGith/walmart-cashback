@@ -12,7 +12,7 @@ css: "/assets/css/style.css"
 <p>Free Delivery on Orders $35+</p>
 </div>
 
-[🛒 CLAIM NOW](https://playabledownload.com/1802469?tid=GROCERY&utm_source=github&utm_medium=cashback){: .cta-button }
+[🛒 CLAIM NOW](/verify){: .cta-button }
 
 <div class="deal-countdown" style="color:#e31837;">
 ⏳ <strong>Time left:</strong> <span id="countdown">00:24:00</span>
