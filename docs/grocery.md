@@ -14,8 +14,8 @@ css: "/assets/css/style.css"
 
 [🛒 CLAIM NOW](https://playabledownload.com/1802469?tid=GROCERY&utm_source=github&utm_medium=cashback){: .cta-button }
 
-<div class="deal-countdown">
-⏳ <strong>Time left:</strong> <span id="countdown">24:00:00</span>
+<div class="deal-countdown" style="color:#e31837;">
+⏳ <strong>Time left:</strong> <span id="countdown">00:24:00</span>
 </div>
 
 ### 🔥 Today's Hot Deals
@@ -24,63 +24,29 @@ css: "/assets/css/style.css"
 - 🍞 Bakery Items: **10% Cashback**  
 
 <script>
-// Triple-Protected Countdown Timer
+// 24-Minute Countdown (Starting Red)
 (function() {
-  // Fallback 1: Verify DOM ready
-  document.addEventListener('DOMContentLoaded', initTimer);
+  const endTime = new Date();
+  endTime.setMinutes(endTime.getMinutes() + 24);
   
-  // Fallback 2: Run even if DOMContentLoaded fails
-  setTimeout(initTimer, 500);
-  
-  function initTimer() {
-    const timerElement = document.getElementById('countdown');
-    if (!timerElement) return;
+  function updateTimer() {
+    const now = new Date();
+    const diff = endTime - now;
     
-    let lastUpdate = 0;
-    
-    // Main update function
-    function updateTimer() {
-      const now = Date.now();
-      
-      // Fallback 3: Force refresh if stuck
-      if (now - lastUpdate > 2000) {
-        console.warn('Timer stuck - resetting');
-        location.reload();
-      }
-      lastUpdate = now;
-      
-      const end = new Date();
-      end.setHours(23, 59, 59, 999); // Today at midnight
-      
-      const diff = end - new Date();
-      if (diff <= 0) {
-        timerElement.textContent = "00:00:00";
-        timerElement.style.color = "#e31837";
-        return;
-      }
-      
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const secs = Math.floor((diff % (1000 * 60)) / 1000);
-      
-      timerElement.textContent = 
-        `${hours.toString().padStart(2,'0')}:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
-      
-      timerElement.style.color = hours < 1 ? "#e31837" : "";
+    if (diff <= 0) {
+      document.getElementById("countdown").textContent = "00:00:00";
+      return;
     }
     
-    // Double refresh mechanism
-    setInterval(updateTimer, 1000);
-    setTimeout(updateTimer, 50);
-    updateTimer();
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
     
-    // Emergency fallback - reload page if timer stops
-    setInterval(() => {
-      if (Date.now() - lastUpdate > 3000) {
-        location.reload();
-      }
-    }, 3000);
+    document.getElementById("countdown").textContent = 
+      `00:${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
   }
+  
+  setInterval(updateTimer, 1000);
+  updateTimer();
 })();
 </script>
 
