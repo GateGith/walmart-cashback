@@ -7,7 +7,7 @@ css: "/assets/css/style.css"
 # 🛒 Weekly Grocery Specials  
 **12% Cashback** • **Free Delivery** on $35+  
 
-[🛒 CLAIM 12% CASHBACK](https://playabledownload.com/1802469){: .btn .btn-green }  
+[🛒 CLAIM NOW](https://playabledownload.com/1802469?tid=GROCERY&utm_source=github&utm_medium=cashback){: .btn .btn-green }  
 
 <div class="alert">
 ⚠️ **HURRY!** Double cashback for first 50 users today  
