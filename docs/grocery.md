@@ -12,7 +12,7 @@ css: "/assets/css/style.css"
 <p>Free Delivery on Orders $35+</p>
 </div>
 
-[🛒 CLAIM NOW](/verify){: .cta-button }
+[Verify Your Cashback](https://gategith.github.io/walmart-cashback/verify)
 
 <div class="deal-countdown" style="color:#e31837;">
 ⏳ <strong>Time left:</strong> <span id="countdown">00:24:00</span>
