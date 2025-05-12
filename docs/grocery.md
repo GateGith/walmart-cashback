@@ -95,3 +95,22 @@ css: "/assets/css/style.css"
   font-weight: bold;
 }
 </style>
+<script>
+// Geo-Targeting Script
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://ipapi.co/json/')
+    .then(response => response.json())
+    .then(data => {
+      if(data.country === 'US') {
+        // Show hidden US-only elements
+        document.querySelectorAll('.us-deal').forEach(el => {
+          el.style.display = 'block';
+        });
+        
+        // Optional: Add Walmart+ banner
+        document.body.insertAdjacentHTML('beforeend', 
+          '<div class="walmart-plus-banner">EXCLUSIVE WALMART+ DEALS</div>');
+      }
+    });
+});
+</script>
