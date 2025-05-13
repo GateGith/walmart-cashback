@@ -1,12 +1,17 @@
-/* Mobile Optimization */
-@media (max-width: 600px) {
-  body {
-    padding: 20px !important;
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+  .verification-container {
+    margin: 16px;
+    border-radius: 12px;
   }
-  h1 {
-    font-size: 24px !important;
+  .verification-header {
+    padding: 16px;
   }
-  h2 {
-    font-size: 20px !important;
+  .verification-header svg {
+    width: 36px;
+    height: 36px;
+  }
+  .verification-header h2 {
+    font-size: 18px;
   }
 }
