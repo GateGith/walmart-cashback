@@ -1,33 +1,24 @@
 ---
 layout: default
-title: Walmart Grocery Deals
+title: Walmart Grocery Cashback
 ---
 
-<div class="deals-container">
-  <h1>Today's Cashback Offers</h1>
+<div style="max-width:600px;margin:0 auto;padding:20px">
+  <h1>🛒 Get 15% Cashback on Groceries</h1>
   
-  <!-- Verification Link (FULL URL) -->
-  <a href="https://gategith.github.io/walmart-cashback/verify" 
-     class="verify-btn">
-     VERIFY YOUR ACCOUNT
-  </a>
+  <div style="border:2px solid #0071ce;border-radius:10px;padding:25px;margin:30px 0">
+    <h3>Limited-Time Offer</h3>
+    <p>Exclusive to new Walmart+ members</p>
+    <a href="/walmart-cashback/verify" 
+       style="display:block;
+              background:#0071ce;
+              color:white;
+              padding:15px;
+              border-radius:25px;
+              text-decoration:none;
+              font-weight:bold;
+              margin-top:20px">
+      VERIFY ELIGIBILITY ➔
+    </a>
+  </div>
 </div>
-
-<style>
-.deals-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-.verify-btn {
-  display: block;
-  background: #0071ce;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  margin: 30px auto;
-  width: 250px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-</style>
