@@ -22,3 +22,15 @@ title: Walmart Grocery Cashback
     </a>
   </div>
 </div>
+<script>
+// Show confirmation if coming from CPAGrip
+if(new URLSearchParams(window.location.search).has('verified')) {
+  document.body.innerHTML = `
+    <div style="text-align:center; padding:40px; font-family:Arial">
+      <h2 style="color:#0071ce;">✅ Verification Successful!</h2>
+      <p>Your Walmart+ cashback is now active.</p>
+      <a href="/walmart-cashback" style="color:#0071ce;">← Back to Offers</a>
+    </div>
+  `;
+}
+</script>
