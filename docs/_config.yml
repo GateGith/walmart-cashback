@@ -1,0 +1,12 @@
+# Traffic Tracking
+plugins:
+  - jekyll-seo-tag
+
+# UTM Parameters
+defaults:
+  - scope:
+      path: ""
+    values:
+      utm_source: organic
+      utm_medium: walmart_cashback
+      utm_campaign: main
