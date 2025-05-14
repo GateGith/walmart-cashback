@@ -1,23 +1,9 @@
-# Traffic Tracking
+# GitHub Pages Configuration
 plugins:
   - jekyll-seo-tag
-
-# UTM Parameters
-defaults:
-  - scope:
-      path: ""
-    values:
-      utm_source: organic
-      utm_medium: walmart_cashback
-      utm_campaign: main
-# Mobile Cache Buster
-plugins:
-  - jekyll-assets
-  - jekyll-sitemap
 
 defaults:
   - scope:
       path: ""
     values:
       version: "{{ site.time | date: '%s' }}"
-<link rel="stylesheet" href="/assets/css/style.css?v={{ site.version }}">
