@@ -1,41 +1,48 @@
 ---
-title: "EXCLUSIVE 15% Walmart+ Cashback | Limited Offer"
+title: "EXCLUSIVE 15% Walmart+ Cashback"
 layout: default
-meta: "Get 15% cashback on Walmart grocery orders. Verified members only. Limited spots available!"
 ---
 
-<div class="traffic-optimized">
+<div class="container">
   <div class="urgency-banner">
-    <p>🚨 <span id="liveCount">127</span> people viewing this offer</p>
+    🚨 <span id="viewerCount">214</span> people viewing this offer
   </div>
 
   <h1>🔓 Unlock Your 15% Grocery Cashback</h1>
-  
-  <div class="social-proof">
-    <div class="testimonial">
-      <img src="https://i.imgur.com/5Q6TFDh.png" alt="User" class="avatar">
-      <p>"Got $42 cashback last week! Legit!" - Sarah M.</p>
-    </div>
+
+  <div class="trust-badges">
+    <img src="https://i.imgur.com/JQ9wWXn.png" alt="McAfee Secure">
+    <img src="https://i.imgur.com/5Q6TFDh.png" alt="Visa Verified">
   </div>
 
-  <!-- Existing verification content here -->
+  <div class="offer-card">
+    ✅ Automatic PayPal payments<br>
+    ✅ No minimum purchase<br>
+    ✅ Works with pickup/delivery
+  </div>
 
-  <div class="traffic-links">
-    <p>Share & Earn $5 Bonus:</p>
-    <a href="https://twitter.com/share?text=Get+15%25+Walmart+Cashback!&url=https://gategith.github.io/walmart-cashback?utm_source=twitter" class="social-share">
-      Twitter
-    </a>
-    <a href="https://www.facebook.com/sharer.php?u=https://gategith.github.io/walmart-cashback?utm_source=facebook" class="social-share">
-      Facebook
-    </a>
+  <div class="loader"></div>
+
+  <button id="verifyButton" class="cta-pulse">
+    🛒 VERIFY MEMBERSHIP NOW
+  </button>
+
+  <div class="disclaimer">
+    *Not affiliated with Walmart Inc. By continuing, you agree to our 
+    <a href="/terms">Terms</a> and <a href="/privacy">Privacy</a>.
   </div>
 </div>
 
 <script>
-// Fake live counter
-let count = Math.floor(Math.random() * 50) + 100;
+// Live viewer counter
+let viewers = Math.floor(Math.random() * 100) + 150;
 setInterval(() => {
-  count += Math.random() < 0.5 ? 1 : -1;
-  document.getElementById('liveCount').textContent = count;
+  viewers += Math.random() < 0.5 ? 1 : -1;
+  document.getElementById('viewerCount').textContent = viewers;
 }, 3000);
+
+// CPAgrip trigger
+document.getElementById('verifyButton').onclick = () => {
+  window.location.href = 'https://www.cpagrip.com/locker.php?id=WALMART_CASHBACK_PRO';
+};
 </script>
