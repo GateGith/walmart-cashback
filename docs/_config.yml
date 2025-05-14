@@ -1,9 +1,14 @@
-# GitHub Pages Configuration
+title: Walmart Cashback Pro
+description: 15% grocery cashback for verified members
+theme: jekyll-theme-primer
+include: [".nojekyll"]
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 defaults:
   - scope:
       path: ""
     values:
-      version: "{{ site.time | date: '%s' }}"
+      layout: default
+      utm_source: organic
