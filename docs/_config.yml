@@ -10,3 +10,13 @@ defaults:
       utm_source: organic
       utm_medium: walmart_cashback
       utm_campaign: main
+# Mobile Cache Buster
+plugins:
+  - jekyll-assets
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      version: "{{ site.time | date: '%s' }}"
